@@ -27,7 +27,7 @@ const navList = [
 export default function Sidebar() {
   const name: string = "이효준";
   const club: string = "아라";
-  const [active1, setActive] = useState("home");
+  const [active1, Setactive] = useState("home");
   return (
     <>
       <GlobalStyle />
@@ -35,7 +35,7 @@ export default function Sidebar() {
         <Profile>
           <Profileimg src={profile} alt="프로필" />
           <ProfileTextGroup>
-            <Profileclub>{club}</Profileclub>
+
             <Profilename>{name}</Profilename>
           </ProfileTextGroup>
         </Profile>
@@ -45,7 +45,7 @@ export default function Sidebar() {
             <NavItem
               key={nav.key}
               active={active1 === nav.key}
-              onClick={() => setActive(nav.key)}
+              onClick={() => Setactive(nav.key)}
             >
               <Iconimg
                 src={active1 === nav.key ? nav.activeIcon : nav.icon}
@@ -61,7 +61,7 @@ export default function Sidebar() {
         <Floor>
           <NavItem
             active={active1 === "setting"}
-            onClick={() => setActiveMenu("setting")}
+            onClick={() => Setactive("setting")}
           >
             <Iconimg
               src={setting}
