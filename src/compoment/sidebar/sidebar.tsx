@@ -15,7 +15,7 @@ import Ccalender from '../../assets/sidebar/color-calender.svg';
 import Ccheck from '../../assets/sidebar/color-check.svg';
 import Cobject from '../../assets/sidebar/color-object.svg';
 import Calerticon from '../../assets/sidebar/color-alerticon.svg';
-const menuList = [
+const navList = [
   { key: 'home', label: '홈', icon: home, activeIcon: Chome },
   { key: 'ranking', label: '역대 동아리', icon: ranking, activeIcon: Cranking },
   { key: 'calendar', label: '캘린더', icon: calender, activeIcon: Ccalender },
@@ -27,9 +27,7 @@ const menuList = [
 export default function Sidebar() {
   const name: string = "이효준";
   const club: string = "아라";
-
-  const [activeMenu, setActiveMenu] = useState("home");
-
+  const [active1, setActive] = useState("home");
   return (
     <>
       <GlobalStyle />
@@ -43,18 +41,18 @@ export default function Sidebar() {
         </Profile>
 
         <Nav>
-          {menuList.map((menu) => (
+          {navList.map((nav) => (
             <NavItem
-              key={menu.key}
-              active={activeMenu === menu.key}
-              onClick={() => setActiveMenu(menu.key)}
+              key={nav.key}
+              active={active1 === nav.key}
+              onClick={() => setActive(nav.key)}
             >
               <Iconimg
-                src={activeMenu === menu.key ? menu.activeIcon : menu.icon}
-                alt={menu.label}
+                src={active1 === nav.key ? nav.activeIcon : nav.icon}
+                alt={nav.label}
               />
-              <IconText active={activeMenu === menu.key}>
-                {menu.label}
+              <IconText active={active1 === nav.key}>
+                {nav.label}
               </IconText>
             </NavItem>
           ))}
@@ -62,7 +60,7 @@ export default function Sidebar() {
 
         <Floor>
           <NavItem
-            active={activeMenu === "setting"}
+            active={active1 === "setting"}
             onClick={() => setActiveMenu("setting")}
           >
             <Iconimg
