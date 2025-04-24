@@ -35,7 +35,7 @@ export default function Sidebar() {
         <Profile>
           <Profileimg src={profile} alt="프로필" />
           <ProfileTextGroup>
-
+          <Profileclub>{club}</Profileclub>
             <Profilename>{name}</Profilename>
           </ProfileTextGroup>
         </Profile>
