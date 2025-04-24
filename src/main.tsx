@@ -1,8 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Login from './pages/login/login'
+import Onboarding from './pages/onboarding/onboarding.tsx';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Login />
+    <Onboarding />
   </StrictMode>
 )
