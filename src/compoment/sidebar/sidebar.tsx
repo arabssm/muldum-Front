@@ -15,6 +15,9 @@ import Ccalender from '../../assets/sidebar/color-calender.svg';
 import Ccheck from '../../assets/sidebar/color-check.svg';
 import Cobject from '../../assets/sidebar/color-object.svg';
 import Calerticon from '../../assets/sidebar/color-alerticon.svg';
+import Gologin from '../../assets/sidebar/gologin.svg';
+import { useNavigate } from "react-router-dom";
+
 const navList = [
   { key: 'home', label: '홈', icon: home, activeIcon: Chome },
   { key: 'ranking', label: '역대 동아리', icon: ranking, activeIcon: Cranking },
@@ -27,19 +30,25 @@ const navList = [
 export default function Sidebar() {
   const name: string = "이효준";
   const club: string = "아라";
+  const navigate = useNavigate();
   const [active1, Setactive] = useState("home");
   return (
     <>
       <GlobalStyle />
       <Container>
-        <Profile>
+        {/* <Profile>
           <Profileimg src={profile} alt="프로필" />
           <ProfileTextGroup>
           <Profileclub>{club}</Profileclub>
             <Profilename>{name}</Profilename>
           </ProfileTextGroup>
+        </Profile> */}
+        <Profile onClick={() => { navigate(`/login`) }}>
+        <Profileimg src={Gologin} alt="프로필" />
+          <Gobutton>
+            로그인
+          </Gobutton>
         </Profile>
-
         <Nav>
           {navList.map((nav) => (
             <NavItem
@@ -176,4 +185,7 @@ const Floor = styled.div`
   flex-direction: column;
   gap: 16px;
   margin-left: 10px;
+`;
+const Gobutton=styled.div`
+  user-select: none;
 `;
