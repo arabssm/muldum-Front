@@ -195,7 +195,7 @@ const Date = styled.div`
 const Section = styled.div`
   width: 100%;
   max-width: 1080px;
-  margin: 20px;
+  margin: 54px;
 `;
 
 const Sectionname = styled.h3`
@@ -207,7 +207,7 @@ const Sectionname = styled.h3`
 const Sectiontext = styled.p`
   font-size: 14px;
   color: #666;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 `;
 
 const Sectionsection = styled.div`
